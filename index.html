@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <button id="showItemInFolder">shell.showItemInFolder()</button>
+    <button id="openExternal">shell.openExternal()</button>
+
+    <script>
+        const {shell} = require('electron');
+
+        const showItemInFolder = document.querySelector('#showItemInFolder');
+        const openExternal = document.querySelector('#openExternal');
+
+        showItemInFolder.addEventListener('click', () => {
+            shell.showItemInFolder(__dirname);
+        });
+
+        openExternal.addEventListener('click', () => {
+            shell.openExternal('https://github.com/2woongjae');
+        });
+    </script>
+</body>
+</html>
